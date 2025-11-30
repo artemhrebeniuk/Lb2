@@ -1,0 +1,172 @@
+/* ----- БАЗОВІ СТИЛІ ДЛЯ СТОРІНКИ ----- */
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #f5f5f5, #e1e5f2);
+    min-height: 200vh; /* щоб був скрол і було видно, що форма не рухається */
+}
+
+#page-header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 40px;
+}
+
+/* Селектор ідентифікатора */
+#content {
+    padding: 20px 40px;
+}
+
+/* ----- НАВІГАЦІЯ + ПРИКЛАД float ----- */
+
+.main-nav {
+    background-color: #34495e;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    float: left;                  /* ВИКОРИСТАННЯ FLOAT */
+    margin-right: 15px;
+}
+
+.main-nav a {
+    display: block;
+    padding: 10px 15px;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    background-color: #2c3e50;
+}
+
+/* Щоб батьківський елемент "обтік" float (клас clearfix використовується в HTML) */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Зображення з float у контенті */
+.float-image {
+    float: left;                  /* Ще один приклад FLOAT */
+    margin: 0 15px 10px 0;
+    border-radius: 4px;
+}
+
+/* ----- ФОРМА РЕЄСТРАЦІЇ: позиціонування та валідація ----- */
+
+/*
+Форма повинна:
+ - бути по центру по горизонталі
+ - "не прокручуватися" (позиція не змінюється при скролі)
+Використовуємо position: fixed;
+*/
+
+.register-form {
+    position: fixed;              /* ФІКСОВАНЕ ПОЗИЦІОНУВАННЯ */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.register-form h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"] {
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+/* ----- ПСЕВДОКЛАСИ valid / invalid та required / optional ----- */
+
+/* Обов'язкові поля (required) */
+input:required {
+    background-color: #fffdf0;
+}
+
+/* Необов'язкові поля (optional) */
+input:optional {
+    background-color: #f4f7fb;
+}
+
+/* Некоректне введення (invalid) */
+input:invalid {
+    border-color: #e74c3c;
+    box-shadow: 0 0 3px rgba(231, 76, 60, 0.6);
+}
+
+/* Коректне введення (valid) */
+input:valid {
+    border-color: #2ecc71;
+    box-shadow: 0 0 3px rgba(46, 204, 113, 0.6);
+}
+
+/* Щоб не підсвічувати поле як invalid, поки воно порожнє (для required) */
+input:required:placeholder-shown {
+    border-color: #ccc;
+    box-shadow: none;
+}
+
+/* Checkbox-група */
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Кнопка відправлення форми */
+.register-form button {
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.register-form button:hover {
+    background-color: #2980b9;
+}
+
+/* ----- FOOTER ----- */
+
+#footer {
+    margin-top: 40px;
+    padding: 20px 40px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}

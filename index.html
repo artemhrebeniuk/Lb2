@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №2 – CSS</title>
+
+    <!-- Підключення ЗОВНІШНЬОГО файлу стилів (вимога №1) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Вбудовані стилі через <style> у <head> (вимога №2) -->
+    <style>
+        /* Селектор тега */
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Селектор класу */
+        .inline-example {
+            border-left: 4px solid #555;
+            padding-left: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="page-header">
+        <h1>Демонстрація використання CSS</h1>
+        <!-- ІНЛАЙН-СТИЛЬ (вимога №3) -->
+        <p style="color: darkred; font-weight: bold;">
+            Цей абзац оформлений за допомогою inline-стилю (атрибут style).
+        </p>
+    </header>
+
+    <nav class="main-nav clearfix">
+        <ul>
+            <li><a href="#content">Головна</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#footer">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <main id="content">
+        <section>
+            <h2>Приклад контенту сторінки</h2>
+            <p>
+                Це демонстраційний текст для лабораторної роботи з веб-верстки.
+                Нижче показано приклад <span class="inline-example">рядкового елемента span з класом</span>,
+                а також використання блокових елементів.
+            </p>
+        </section>
+
+        <section id="gallery">
+            <h2>Приклад використання float</h2>
+            <img src="https://via.placeholder.com/200x150" alt="Демонстраційне зображення"
+                 class="float-image">
+            <p>
+                Це параграф тексту, який обтікає зображення. Властивість <code>float</code>
+                дозволяє "обтікання" зображення текстом. Зазвичай її використовують для
+                оформлення навігаційних елементів або картинок у статті.
+            </p>
+            <p>
+                Тут ми просто демонструємо, як текст розташовується поруч із зображенням,
+                поки зображення "плаває" ліворуч завдяки <code>float: left;</code>.
+            </p>
+        </section>
+    </main>
+
+    <!-- ФОРМА РЕЄСТРАЦІЇ (твій варіант завдання) -->
+    <form class="register-form" novalidate>
+        <h2>Реєстрація користувача</h2>
+
+        <div class="form-group">
+            <label for="username">Ім'я користувача (мін. 3 символи)*</label>
+            <input type="text" id="username" name="username"
+                   required minlength="3" placeholder="Введіть ім'я">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Електронна пошта*</label>
+            <input type="email" id="email" name="email"
+                   required placeholder="name@example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Пароль (мін. 6 символів)*</label>
+            <input type="password" id="password" name="password"
+                   required minlength="6" placeholder="Введіть пароль">
+        </div>
+
+        <div class="form-group">
+            <label for="age">Вік (необов'язкове поле)</label>
+            <input type="number" id="age" name="age" min="1" max="120"
+                   placeholder="Вкажіть ваш вік">
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" name="terms" required>
+                Я погоджуюсь з умовами використання*
+            </label>
+        </div>
+
+        <button type="submit">Зареєструватися</button>
+    </form>
+
+    <footer id="footer">
+        <p>© 2025, Приклад сторінки для лабораторної роботи №2.</p>
+    </footer>
+
+</body>
+</html>
